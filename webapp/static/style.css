@@ -1,0 +1,194 @@
+/* static/css/style.css */
+:root {
+    --primary-color: #8ecae6;
+    --secondary-color: #219ebc;
+    --accent-color: #ffb703;
+    --light-bg: #f8f9fa;
+    --success-color: #95d5b2;
+    --warning-color: #ffd166;
+    --danger-color: #ef476f;
+    --text-color: #2b2d42;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar Styling */
+.navbar {
+    background: rgba(255, 255, 255, 0.9) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: var(--secondary-color) !important;
+    font-size: 1.5rem;
+}
+
+/* Card Styling */
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)) !important;
+    color: white !important;
+    border: none;
+    padding: 1.5rem;
+}
+
+/* Button Styling */
+.btn-primary {
+    background-color: var(--secondary-color);
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(33, 158, 188, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(33, 158, 188, 0.4);
+}
+
+/* Upload Area Styling */
+.upload-area {
+    border: 3px dashed var(--primary-color);
+    border-radius: 15px;
+    padding: 3rem 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.7);
+    margin: 1.5rem 0;
+}
+
+.upload-area:hover {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: var(--secondary-color);
+}
+
+/* Alert Styling */
+.alert {
+    border: none;
+    border-radius: 10px;
+    padding: 1.25rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.alert-success {
+    background-color: rgba(149, 213, 178, 0.2);
+    color: #1b4332;
+    border-left: 4px solid var(--success-color);
+}
+
+.alert-danger {
+    background-color: rgba(239, 71, 111, 0.15);
+    color: #780000;
+    border-left: 4px solid var(--danger-color);
+}
+
+/* Footer Styling */
+.footer {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+    text-align: center;
+    color: #6c757d;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Form Styling */
+.form-control {
+    border: 1px solid #e1e5ee;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(142, 202, 230, 0.25);
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animated {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Result Page Styling */
+.result-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Doctor Cards */
+.doctor-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.doctor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .card {
+        margin: 0.5rem;
+    }
+    
+    .upload-area {
+        padding: 2rem 1rem;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}

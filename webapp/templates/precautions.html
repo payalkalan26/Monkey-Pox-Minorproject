@@ -1,0 +1,257 @@
+{% extends "base.html" %}
+
+{% block title %}Precautions - Monkeypox{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <!-- Hero Section -->
+            <div class="text-center mb-5 animate-on-scroll">
+                <h1 class="display-5 fw-bold mb-3" style="color: var(--secondary-color);">
+                    <i class="fas fa-shield-virus me-2"></i>Monkeypox Prevention
+                </h1>
+                <p class="lead">Protect yourself and others with these important safety measures</p>
+                <div class="divider bg-primary mx-auto" style="width: 100px; height: 4px; opacity: 0.7; border-radius: 2px;"></div>
+            </div>
+
+            <!-- Prevention Cards -->
+            <div class="row g-4 mb-5">
+                <!-- Card 1 -->
+                <div class="col-md-6 col-lg-4 animate-on-scroll" style="animation-delay: 0.1s;">
+                    <div class="card h-100 border-0 shadow-sm hover-shadow">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-wrapper mb-3" style="width: 70px; height: 70px; margin: 0 auto 1rem; background: rgba(142, 202, 230, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-hands-wash text-primary" style="font-size: 2rem;"></i>
+                            </div>
+                            <h4 class="h5">Hand Hygiene</h4>
+                            <p class="mb-0">Wash hands frequently with soap and water for at least 20 seconds or use an alcohol-based hand sanitizer.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-md-6 col-lg-4 animate-on-scroll" style="animation-delay: 0.2s;">
+                    <div class="card h-100 border-0 shadow-sm hover-shadow">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-wrapper mb-3" style="width: 70px; height: 70px; margin: 0 auto 1rem; background: rgba(33, 158, 188, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-people-arrows text-primary" style="font-size: 2rem;"></i>
+                            </div>
+                            <h4 class="h5">Social Distancing</h4>
+                            <p class="mb-0">Maintain physical distance from people who are sick or have symptoms of monkeypox.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-md-6 col-lg-4 animate-on-scroll" style="animation-delay: 0.3s;">
+                    <div class="card h-100 border-0 shadow-sm hover-shadow">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-wrapper mb-3" style="width: 70px; height: 70px; margin: 0 auto 1rem; background: rgba(255, 183, 3, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-hands-helping text-warning" style="font-size: 2rem;"></i>
+                            </div>
+                            <h4 class="h5">Safe Practices</h4>
+                            <p class="mb-0">Avoid contact with animals that could harbor the virus and materials they have touched.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col-md-6 col-lg-4 animate-on-scroll" style="animation-delay: 0.4s;">
+                    <div class="card h-100 border-0 shadow-sm hover-shadow">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-wrapper mb-3" style="width: 70px; height: 70px; margin: 0 auto 1rem; background: rgba(239, 71, 111, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-head-side-mask text-danger" style="font-size: 2rem;"></i>
+                            </div>
+                            <h4 class="h5">Protective Equipment</h4>
+                            <p class="mb-0">Wear appropriate personal protective equipment (PPE) when caring for infected individuals.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="col-md-6 col-lg-4 animate-on-scroll" style="animation-delay: 0.5s;">
+                    <div class="card h-100 border-0 shadow-sm hover-shadow">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-wrapper mb-3" style="width: 70px; height: 70px; margin: 0 auto 1rem; background: rgba(149, 213, 178, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-syringe text-success" style="font-size: 2rem;"></i>
+                            </div>
+                            <h4 class="h5">Vaccination</h4>
+                            <p class="mb-0">Consider vaccination if you're at high risk of exposure to monkeypox.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="col-md-6 col-lg-4 animate-on-scroll" style="animation-delay: 0.6s;">
+                    <div class="card h-100 border-0 shadow-sm hover-shadow">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-wrapper mb-3" style="width: 70px; height: 70px; margin: 0 auto 1rem; background: rgba(142, 202, 230, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-exclamation-triangle text-primary" style="font-size: 2rem;"></i>
+                            </div>
+                            <h4 class="h5">Early Detection</h4>
+                            <p class="mb-0">Be aware of the symptoms and seek medical attention if you suspect exposure.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Symptoms Section -->
+            <div class="card border-0 shadow-sm mb-5 animate-on-scroll">
+                <div class="card-header bg-light">
+                    <h3 class="mb-0"><i class="fas fa-exclamation-circle me-2 text-warning"></i>Recognizing Symptoms</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5>Early Symptoms (0-5 days)</h5>
+                            <ul>
+                                <li>Fever</li>
+                                <li>Headache</li>
+                                <li>Muscle aches</li>
+                                <li>Backache</li>
+                                <li>Swollen lymph nodes</li>
+                                <li>Chills</li>
+                                <li>Exhaustion</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h5>Rash (1-3 days after fever)</h5>
+                            <ul>
+                                <li>Often begins on the face then spreads</li>
+                                <li>Lesions progress through stages</li>
+                                <li>May be painful or itchy</li>
+                                <li>Scabs form and fall off</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What to Do If Infected -->
+            <div class="card border-0 shadow-sm mb-5 animate-on-scroll" style="animation-delay: 0.2s;">
+                <div class="card-header bg-light">
+                    <h3 class="mb-0"><i class="fas fa-heartbeat me-2 text-danger"></i>If You're Infected</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="d-flex mb-3">
+                                <div class="me-3 text-primary">
+                                    <i class="fas fa-home fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h5>Isolate Yourself</h5>
+                                    <p class="mb-0">Stay in a separate room and use a separate bathroom if possible. Avoid contact with others and pets.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex mb-3">
+                                <div class="me-3 text-primary">
+                                    <i class="fas fa-hand-holding-medical fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h5>Care for Your Rash</h5>
+                                    <p class="mb-0">Keep the rash clean and covered with bandages. Avoid scratching or touching the rash.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="d-flex mb-3">
+                                <div class="me-3 text-primary">
+                                    <i class="fas fa-phone-alt fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h5>Contact Healthcare Provider</h5>
+                                    <p class="mb-0">Call ahead before visiting a healthcare facility and inform them about your symptoms and possible exposure.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex">
+                                <div class="me-3 text-primary">
+                                    <i class="fas fa-users-slash fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h5>Prevent Spread</h5>
+                                    <p class="mb-0">Wear a mask, cover your mouth when coughing or sneezing, and practice good hand hygiene.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Emergency Warning Signs -->
+            <div class="alert alert-danger animate-on-scroll" style="animation-delay: 0.3s;">
+                <h5 class="alert-heading d-flex align-items-center">
+                    <i class="fas fa-exclamation-triangle me-2"></i>
+                    Seek Emergency Medical Attention If You Experience:
+                </h5>
+                <ul class="mb-0">
+                    <li>Difficulty breathing or shortness of breath</li>
+                    <li>Chest pain or pressure</li>
+                    <li>New confusion or inability to arouse</li>
+                    <li>Bluish lips or face</li>
+                    <li>Severe pain or the rash is near your eyes, mouth, or genitals</li>
+                </ul>
+            </div>
+
+            <!-- Final Note -->
+            <div class="text-center mt-5 animate-on-scroll" style="animation-delay: 0.4s;">
+                <div class="p-4 rounded" style="background-color: rgba(142, 202, 230, 0.2);">
+                    <h3 class="mb-3">Remember</h3>
+                    <p class="lead mb-4">
+                        While monkeypox can be serious, most people recover within 2-4 weeks. Early detection and proper care can help prevent complications and reduce the risk of spreading the virus to others.
+                    </p>
+                    <p class="mb-0">
+                        Stay informed, stay safe, and don't hesitate to seek medical advice if you have concerns about your health.
+                    </p>
+                </div>
+                
+                <div class="mt-4">
+                    <a href="{{ url_for('detection') }}" class="btn btn-primary me-2">
+                        <i class="fas fa-upload me-2"></i> Check an Image
+                    </a>
+                    <a href="{{ url_for('home') }}" class="btn btn-outline-primary">
+                        <i class="fas fa-home me-2"></i> Return to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .hover-shadow {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .hover-shadow:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    .divider {
+        height: 4px;
+        width: 60px;
+        background: var(--primary-color);
+        margin: 20px auto;
+        border-radius: 2px;
+    }
+    
+    .card-header h3 {
+        font-weight: 600;
+    }
+    
+    .icon-wrapper {
+        transition: transform 0.3s ease;
+    }
+    
+    .card:hover .icon-wrapper {
+        transform: scale(1.1);
+    }
+</style>
+{% endblock %}

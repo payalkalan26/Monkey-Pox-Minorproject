@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Image - Monkeypox Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Designing a Prediction Model for Detection of Monkeypox</h1>
+        <h3>Developed by Payal & Prerna</h3>
+    </header>
+
+    <main>
+        <h2>Upload Skin Lesion Image</h2>
+        <form action="" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" required>
+            <button type="submit">Predict</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>Department of Electronics & Communication Engineering</p>
+        <p>Dr. Akhilesh Das Gupta Institute of Professional Studies</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,245 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Monkeypox Detection{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="py-5 text-center" style="background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-radius: 20px; margin: 2rem 0; padding: 4rem 2rem;">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-4" style="color: var(--secondary-color);">
+            <i class="fas fa-virus me-2"></i>Monkeypox Detection
+        </h1>
+        <p class="lead mb-4">Advanced AI-powered detection for early identification of monkeypox symptoms</p>
+        
+        <div class="d-flex justify-content-center gap-3">
+            {% if 'user_id' in session %}
+                <a href="{{ url_for('detection') }}" class="btn btn-primary btn-lg px-4">
+                    <i class="fas fa-upload me-2"></i>Upload Image
+                </a>
+                <a href="{{ url_for('precautions') }}" class="btn btn-outline-primary btn-lg px-4">
+                    <i class="fas fa-shield-alt me-2"></i>Learn Prevention
+                </a>
+            {% else %}
+                <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg px-4">
+                    <i class="fas fa-sign-in-alt me-2"></i>Login
+                </a>
+                <a href="{{ url_for('signup') }}" class="btn btn-outline-primary btn-lg px-4">
+                    <i class="fas fa-user-plus me-2"></i>Sign Up
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<div class="row g-4 mb-5">
+    <div class="col-md-4 animate-on-scroll">
+        <div class="card h-100 border-0 shadow-sm hover-shadow">
+            <div class="card-body text-center p-4">
+                <div class="icon-wrapper mb-3" style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: rgba(142, 202, 230, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-bolt text-primary" style="font-size: 2.5rem;"></i>
+                </div>
+                <h3 class="h4">Quick Detection</h3>
+                <p class="mb-0">Get instant analysis of skin conditions with our advanced AI technology.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 animate-on-scroll" style="animation-delay: 0.1s;">
+        <div class="card h-100 border-0 shadow-sm hover-shadow">
+            <div class="card-body text-center p-4">
+                <div class="icon-wrapper mb-3" style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: rgba(149, 213, 178, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-shield-alt text-success" style="font-size: 2.5rem;"></i>
+                </div>
+                <h3 class="h4">Stay Protected</h3>
+                <p class="mb-0">Learn how to prevent the spread of monkeypox with our comprehensive guides.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 animate-on-scroll" style="animation-delay: 0.2s;">
+        <div class="card h-100 border-0 shadow-sm hover-shadow">
+            <div class="card-body text-center p-4">
+                <div class="icon-wrapper mb-3" style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: rgba(255, 183, 3, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-user-md text-warning" style="font-size: 2.5rem;"></i>
+                </div>
+                <h3 class="h4">Expert Advice</h3>
+                <p class="mb-0">Access reliable information and connect with healthcare professionals.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- How It Works Section -->
+<div class="card border-0 shadow-sm mb-5 animate-on-scroll">
+    <div class="card-header bg-light">
+        <h2 class="mb-0 text-center"><i class="fas fa-question-circle me-2"></i>How It Works</h2>
+    </div>
+    <div class="card-body p-4 p-md-5">
+        <div class="row g-4">
+            <div class="col-md-4 text-center">
+                <div class="step-number mb-3" style="width: 50px; height: 50px; background: var(--primary-color); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem; font-weight: bold;">1</div>
+                <h4>Upload Image</h4>
+                <p class="mb-0">Take a clear photo of the affected area and upload it to our platform.</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="step-number mb-3" style="width: 50px; height: 50px; background: var(--primary-color); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem; font-weight: bold;">2</div>
+                <h4>AI Analysis</h4>
+                <p class="mb-0">Our advanced AI analyzes the image for signs of monkeypox.</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="step-number mb-3" style="width: 50px; height: 50px; background: var(--primary-color); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem; font-weight: bold;">3</div>
+                <h4>Get Results</h4>
+                <p class="mb-0">Receive instant results with recommendations and next steps.</p>
+            </div>
+        </div>
+        
+        <div class="text-center mt-5">
+            <a href="{{ url_for('signup' if not 'user_id' in session else 'detection') }}" class="btn btn-primary btn-lg px-5">
+                <i class="fas fa-{{ 'user-plus' if not 'user_id' in session else 'upload' }} me-2"></i>
+                {{ 'Get Started' if not 'user_id' in session else 'Upload Image' }}
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- About Monkeypox Section -->
+<div class="row g-4 mb-5">
+    <div class="col-lg-6 animate-on-scroll">
+        <div class="card h-100 border-0 shadow-sm">
+            <div class="card-header bg-light">
+                <h3 class="mb-0"><i class="fas fa-info-circle me-2"></i>About Monkeypox</h3>
+            </div>
+            <div class="card-body">
+                <p>Monkeypox is a rare disease caused by infection with the monkeypox virus. It can be transmitted from animals to humans and between humans.</p>
+                
+                <h5 class="mt-4">Common Symptoms:</h5>
+                <ul>
+                    <li>Fever</li>
+                    <li>Headache</li>
+                    <li>Muscle aches</li>
+                    <li>Swollen lymph nodes</li>
+                    <li>Chills</li>
+                    <li>Exhaustion</li>
+                    <li>Rash that can look like pimples or blisters</li>
+                </ul>
+                
+                <div class="alert alert-info mt-4">
+                    <i class="fas fa-lightbulb me-2"></i>
+                    <strong>Did you know?</strong> Monkeypox is usually a self-limited disease with symptoms lasting 2-4 weeks.
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-6 animate-on-scroll" style="animation-delay: 0.1s;">
+        <div class="card h-100 border-0 shadow-sm">
+            <div class="card-header bg-light">
+                <h3 class="mb-0"><i class="fas fa-shield-virus me-2"></i>Prevention Tips</h3>
+            </div>
+            <div class="card-body">
+                <div class="d-flex mb-3">
+                    <div class="me-3 text-primary">
+                        <i class="fas fa-hands-wash fa-2x"></i>
+                    </div>
+                    <div>
+                        <h5>Practice Good Hygiene</h5>
+                        <p>Wash your hands frequently with soap and water or use an alcohol-based hand sanitizer.</p>
+                    </div>
+                </div>
+                
+                <div class="d-flex mb-3">
+                    <div class="me-3 text-primary">
+                        <i class="fas fa-people-arrows fa-2x"></i>
+                    </div>
+                    <div>
+                        <h5>Avoid Close Contact</h5>
+                        <p>Avoid close contact with people who have a rash that looks like monkeypox.</p>
+                    </div>
+                </div>
+                
+                <div class="d-flex mb-3">
+                    <div class="me-3 text-primary">
+                        <i class="fas fa-handshake-slash fa-2x"></i>
+                    </div>
+                    <div>
+                        <h5>Handle Animals Safely</h5>
+                        <p>Avoid contact with animals that could harbor the virus, especially animals that are sick or found dead.</p>
+                    </div>
+                </div>
+                
+                <div class="d-flex">
+                    <div class="me-3 text-primary">
+                        <i class="fas fa-head-side-mask fa-2x"></i>
+                    </div>
+                    <div>
+                        <h5>Use Personal Protective Equipment</h5>
+                        <p>Wear appropriate personal protective equipment when caring for infected individuals.</p>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-4">
+                    <a href="{{ url_for('precautions') }}" class="btn btn-outline-primary">
+                        <i class="fas fa-shield-alt me-2"></i> View All Precautions
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Call to Action -->
+<div class="text-center p-5 rounded-3" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+    <h2 class="mb-4">Ready to check for monkeypox?</h2>
+    <p class="lead mb-4">Upload an image now and get instant analysis from our AI-powered system.</p>
+    <a href="{{ url_for('signup' if not 'user_id' in session else 'detection') }}" class="btn btn-primary btn-lg px-5">
+        <i class="fas fa-{{ 'user-plus' if not 'user_id' in session else 'upload' }} me-2"></i>
+        {{ 'Get Started' if not 'user_id' in session else 'Upload Image' }}
+    </a>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .hover-shadow {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .hover-shadow:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    .icon-wrapper {
+        transition: transform 0.3s ease;
+    }
+    
+    .card:hover .icon-wrapper {
+        transform: scale(1.1);
+    }
+    
+    .step-connector {
+        position: relative;
+        height: 2px;
+        background: #dee2e6;
+        margin: 25px 0;
+    }
+    
+    .step-connector:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--primary-color);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.5s ease;
+    }
+    
+    .animate-on-scroll.animated .step-connector:before {
+        transform: scaleX(1);
+    }
+</style>
+{% endblock %}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Monkeypox Specialists</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Recommended Doctors & Clinics</h1>
+
+    <div class="doctor-card">
+      <h3>Dr. Ramesh Gupta</h3>
+      <p>Dermatologist – Apollo Hospital, Delhi</p>
+      <p>📞 +91 98765 43210</p>
+    </div>
+
+    <div class="doctor-card">
+      <h3>Dr. Priya Sharma</h3>
+      <p>Infectious Disease Specialist – AIIMS, Delhi</p>
+      <p>📞 +91 99887 77665</p>
+    </div>
+
+    <div class="doctor-card">
+      <h3>Dr. Arjun Mehta</h3>
+      <p>General Physician – Fortis Hospital, Noida</p>
+      <p>📞 +91 91234 56789</p>
+    </div>
+
+    <a href="{{ url_for('precautions') }}" class="btn">Back to Precautions</a>
+    <a href="{{ url_for('home') }}" class="btn secondary">Home</a>
+  </div>
+</body>
+</html>

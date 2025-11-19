@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% block title %}No Monkeypox Detected{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center animate-on-scroll">
+    <div class="col-lg-8">
+        <div class="card border-0 shadow">
+            <div class="card-header text-center py-5" style="background: linear-gradient(135deg, #95d5b2, #74c69d);">
+                <div class="result-icon text-white">
+                    <i class="fas fa-check-circle" style="font-size: 5rem;"></i>
+                </div>
+                <h2 class="text-white mb-3">Great News! 🎉</h2>
+                <p class="lead text-white mb-0">No signs of monkeypox were detected in your image.</p>
+            </div>
+            <div class="card-body p-4 p-md-5">
+                <div class="text-center mb-5">
+                    <img src="{{ url_for('static', filename='images/healthy.png') }}" alt="Healthy" class="img-fluid" style="max-height: 200px;">
+                    <h3 class="mt-4 text-success">You're Safe!</h3>
+                    <p class="lead">The image you uploaded doesn't show any signs of monkeypox.</p>
+                    <div class="alert alert-success d-inline-flex align-items-center" role="alert">
+                        <i class="fas fa-info-circle me-2"></i>
+                        <div>
+                            If you're experiencing symptoms, please consult a healthcare professional.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-header bg-light">
+                        <h5 class="mb-0"><i class="fas fa-shield-virus me-2"></i>Stay Protected</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="d-flex mb-3">
+                                    <div class="me-3 text-primary">
+                                        <i class="fas fa-hands-wash fa-2x"></i>
+                                    </div>
+                                    <div>
+                                        <h6>Practice Good Hygiene</h6>
+                                        <p class="small mb-0">Wash hands frequently with soap and water for at least 20 seconds.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="d-flex mb-3">
+                                    <div class="me-3 text-primary">
+                                        <i class="fas fa-people-arrows fa-2x"></i>
+                                    </div>
+                                    <div>
+                                        <h6>Maintain Social Distance</h6>
+                                        <p class="small mb-0">Keep a safe distance from people who are sick or showing symptoms.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="d-flex mb-3">
+                                    <div class="me-3 text-primary">
+                                        <i class="fas fa-head-side-mask fa-2x"></i>
+                                    </div>
+                                    <div>
+                                        <h6>Wear a Mask</h6>
+                                        <p class="small mb-0">Wear a mask in crowded or public settings where social distancing is not possible.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="d-flex">
+                                    <div class="me-3 text-primary">
+                                        <i class="fas fa-syringe fa-2x"></i>
+                                    </div>
+                                    <div>
+                                        <h6>Get Vaccinated</h6>
+                                        <p class="small mb-0">Consider getting vaccinated if you're in a high-risk group or as recommended by health authorities.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-header bg-light">
+                        <h5 class="mb-0"><i class="fas fa-exclamation-triangle me-2 text-warning"></i>When to Seek Medical Attention</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>While your current image doesn't show signs of monkeypox, consult a healthcare provider if you experience:</p>
+                        <ul>
+                            <li>Unexplained rash or skin lesions</li>
+                            <li>Fever, chills, or swollen lymph nodes</li>
+                            <li>Headache, muscle aches, or exhaustion</li>
+                            <li>Respiratory symptoms (cough, sore throat, nasal congestion)</li>
+                        </ul>
+                        <p class="mb-0">Early detection and treatment can help prevent complications and reduce the risk of spreading the virus to others.</p>
+                    </div>
+                </div>
+
+                <div class="text-center mt-5">
+                    <h4 class="mb-4">Stay Informed, Stay Safe</h4>
+                    <p class="lead">Knowledge is your best defense against monkeypox and other infectious diseases.</p>
+                    
+                    <div class="d-flex justify-content-center gap-3 mt-4">
+                        <a href="{{ url_for('precautions') }}" class="btn btn-outline-primary">
+                            <i class="fas fa-shield-alt me-2"></i> Learn More About Prevention
+                        </a>
+                        <a href="{{ url_for('detection') }}" class="btn btn-primary">
+                            <i class="fas fa-upload me-2"></i> Check Another Image
+                        </a>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <a href="{{ url_for('home') }}" class="text-decoration-none">
+                            <i class="fas fa-home me-1"></i> Return to Home
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

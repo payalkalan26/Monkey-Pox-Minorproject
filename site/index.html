@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Monkeypox Detection Project</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <h1>Monkeypox Detection</h1>
+      <p class="subtitle">A machine learning approach for lesion image classification</p>
+      <a class="button" href="#demo">See Interactive Demo</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="abstract">
+      <h2>Abstract</h2>
+      <p>Briefly summarize your project: dataset, model, key findings, and impact. Replace this text with your own summary.</p>
+    </section>
+
+    <section id="data">
+      <h2>Data & Preprocessing</h2>
+      <ul>
+        <li>Dataset description and sources</li>
+        <li>Data splits and augmentation</li>
+        <li>Input size and normalization</li>
+      </ul>
+    </section>
+
+    <section id="model">
+      <h2>Model</h2>
+      <ul>
+        <li>Architecture or algorithm (e.g., CNN)</li>
+        <li>Training setup (epochs, optimizer, loss)</li>
+        <li>Implementation framework (TensorFlow / PyTorch / etc.)</li>
+      </ul>
+    </section>
+
+    <section id="results">
+      <h2>Results</h2>
+      <p>Include your metrics and plots. Place images in <code>site/assets/</code> and reference them below.</p>
+      <div class="grid">
+        <figure>
+          <img src="assets/confusion_matrix.png" alt="Confusion Matrix">
+          <figcaption>Confusion Matrix</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/roc_curve.png" alt="ROC Curve">
+          <figcaption>ROC Curve</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="demo">
+      <h2>Interactive Demo</h2>
+      <p>Use the client-side forecasting demo below. Upload your CSV and set parameters. Supported formats:</p>
+      <ul>
+        <li>Wide: first column <code>Country</code>, remaining columns are dates with daily counts.</li>
+        <li>Two-column: <code>Date, Total_cases</code>.</li>
+      </ul>
+      <div class="panel">
+        <label class="control">
+          <span>Upload CSV</span>
+          <input type="file" id="csvInput" accept=".csv" />
+        </label>
+        <button id="loadSample" class="button">Load sample (if available)</button>
+      </div>
+      <div class="panel inline">
+        <label class="control">
+          <span>MA window (days)</span>
+          <input type="number" id="window" value="7" min="1" />
+        </label>
+        <label class="control">
+          <span>Forecast horizon (days)</span>
+          <input type="number" id="horizon" value="14" min="1" />
+        </label>
+        <button id="runForecast" class="button">Run Forecast</button>
+      </div>
+      <p id="status" style="opacity:.8;">Waiting for CSV...</p>
+      <div id="chart" style="width:100%;height:480px;background:#fff;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.06);"></div>
+    </section>
+
+    <section id="ethics">
+      <h2>Ethics & Limitations</h2>
+      <ul>
+        <li>Non-clinical use disclaimer</li>
+        <li>Potential dataset bias and limitations</li>
+        <li>Privacy considerations</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Your Name. For academic demonstration only.</p>
+    </div>
+  </footer>
+  <!-- Scripts: Plotly, PapaParse, and the app logic -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

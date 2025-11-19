@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block title %}Login - Monkeypox Detection{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center min-vh-100 align-items-center">
+    <div class="col-md-8 col-lg-6 col-xl-5">
+        <div class="card border-0 shadow animate-on-scroll">
+            <div class="card-body p-4 p-md-5">
+                <div class="text-center mb-4">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" height="80" class="mb-3">
+                    <h2 class="mb-1">Welcome Back!</h2>
+                    <p class="text-muted">Sign in to access Monkeypox Detection</p>
+                </div>
+                
+                <form method="POST" action="{{ url_for('login') }}">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-light border-end-0">
+                                <i class="fas fa-user text-muted"></i>
+                            </span>
+                            <input type="text" class="form-control border-start-0" id="username" name="username" 
+                                   placeholder="Enter your username" required autofocus>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="password" class="form-label">Password</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-light border-end-0">
+                                <i class="fas fa-lock text-muted"></i>
+                            </span>
+                            <input type="password" class="form-control border-start-0" id="password" 
+                                   name="password" placeholder="Enter your password" required>
+                            <button class="btn btn-outline-secondary border-start-0 toggle-password" type="button">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="form-text text-end">
+                            <a href="#" class="text-decoration-none">Forgot password?</a>
+                        </div>
+                    </div>
+                    
+                    <div class="d-grid mb-3">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-sign-in-alt me-2"></i>Login
+                        </button>
+                    </div>
+                    
+                    <div class="text-center">
+                        <p class="mb-0">Don't have an account? 
+                            <a href="{{ url_for('signup') }}" class="text-decoration-none fw-bold">Sign up</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Toggle password visibility
+    document.querySelectorAll('.toggle-password').forEach(button => {
+        button.addEventListener('click', function() {
+            const icon = this.querySelector('i');
+            const passwordInput = this.previousElementSibling;
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        });
+    });
+</script>
+{% endblock %}
