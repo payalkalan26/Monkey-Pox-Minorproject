@@ -34,10 +34,15 @@ def init_db():
 init_db()
 
 # Model loading
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, 'models', 'monkeypox_mobilenetv3_final.h5')
+
+model = None
 try:
-    MODEL_PATH = os.path.join(os.path.dirname(__file__), '../models/monkeypox_mobilenetv3_final.h5')
     model = load_model(MODEL_PATH)
-except:
+    print("Model loaded successfully from:", MODEL_PATH)
+except Exception as e:
+    print("Error loading model:", e)
     model = None
 
 # Login required decorator
