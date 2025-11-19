@@ -12,3 +12,4 @@ tensorflow==2.10.0
 # torch>=2.0.0
 # onnxruntime>=1.15.0
 gunicorn
+Werkzeug
