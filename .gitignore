@@ -1,0 +1,35 @@
+# --- Virtual environments ---
+venv/
+.venv/
+env/
+
+# --- Python cache ---
+__pycache__/
+*.py[cod]
+*.pyo
+
+# --- Jupyter notebooks ---
+.ipynb_checkpoints/
+
+# --- Databases (local only) ---
+*.db
+*.sqlite3
+
+# --- Logs ---
+*.log
+
+# --- Large model files ---
+models/
+webapp/models/
+webapp/*.h5
+*.h5
+
+# --- Uploaded images (runtime data) ---
+webapp/static/uploads/
+
+# --- OS / editor junk ---
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
