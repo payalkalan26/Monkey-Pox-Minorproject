@@ -35,8 +35,16 @@ init_db()
 
 # Model loading
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-MODEL_PATH = os.path.join(BASE_DIR, 'models', 'monkeypox_mobilenetv3_final.h5')
+MODEL_PATH = os.path.join(BASE_DIR, '..', 'models', 'monkeypox_mobilenetv3_final.h5')
+MODEL_PATH = os.path.abspath(MODEL_PATH)
 
+model = None
+try:
+    model = load_model(MODEL_PATH)
+    print("Model loaded successfully from:", MODEL_PATH)
+except Exception as e:
+    print("Error loading model:", e)
+    model = None
 model = None
 try:
     model = load_model(MODEL_PATH)
