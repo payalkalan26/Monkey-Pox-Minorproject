@@ -34,3 +34,14 @@ Thumbs.db
 desktop.ini
 .idea/
 .vscode/
+
+# Dev-only folders (not needed for deployment)
+assets/
+samples/
+scripts/
+
+# Training / testing scripts (not needed in production)
+train_model.py
+train_model_v3.py
+test_model.py
+test_model_v3.py
